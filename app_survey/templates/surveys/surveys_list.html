@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "Surveys" %}</title>
+</head>
+<body>
+
+
+    {% if surveys_list %}
+    <ul>
+        {% for survey in surveys_list %}
+
+        <li>
+            <a href="/{{ survey.id }}">{{ survey }}</a>
+        </li>
+
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p> {% trans "No surveys" %} </p>
+    {% endif %}
+
+    <a href="/users/list">{% trans "Users list" %}</a>
+</body>
+{% endblock %}
+</html>

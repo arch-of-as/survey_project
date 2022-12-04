@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "Registration" %}</title>
+</head>
+<body>
+    <h1>{% trans "Registration" %}</h1>
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ register_form.as_p }}
+		<button class="btn btn-primary" type="submit">{% trans "Registration" %}</button>
+	</form>
+</body>
+{% endblock %}
+</html>

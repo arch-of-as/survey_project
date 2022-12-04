@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "Logout" %}</title>
+</head>
+<body>
+  <p>{% trans "Your logout is successful" %}</p>
+  <a href="/">{% trans "Main page" %}</a>
+</body>
+{% endblock %}
+</html>

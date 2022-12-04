@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ survey }}</title>
+</head>
+<body>
+    <p> {{ survey }} </p>
+    <form method="post">
+    {% if survey.questions.all %}
+    <li>
+        {% for question in survey.questions.all %}
+            {{ question }}
+            <p>
+
+                {% csrf_token %}
+                <select size="{{ question.answer_options.count }}" name="{{question}}" class="scrollable" multiple>
+                {% for answer_option in question.answer_options.all %}
+
+                    <option>{{ answer_option }}</option>
+                {% endfor %}
+                </select>
+
+            </p>
+        {% endfor %}
+    </li>
+    {% endif %}
+    <button type="submit"> Send </button>
+    </form>
+    <a href="/">{% trans "Main page" %}</a>
+</body>
+{% endblock %}
+</html>
