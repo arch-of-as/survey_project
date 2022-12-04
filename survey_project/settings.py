@@ -127,7 +127,7 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'),]
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/main/'
+LOGIN_REDIRECT_URL = '/'
 
 SESSION_COOKIE_AGE = 30 * 24 * 3600
 
