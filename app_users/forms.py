@@ -29,5 +29,9 @@ class ProfileForm(forms.ModelForm):
         fields = ['first_name', 'last_name']
 
 
-class ReplenishmentBalanceForm(forms.Form):
-    amount_of_money = forms.IntegerField()
+class ChangeColorForm(forms.ModelForm):
+
+    class Meta:
+        model = Profile
+        fields = ['color']
+

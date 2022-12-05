@@ -4,10 +4,14 @@ from django.utils.translation import gettext_lazy as _
 
 class Survey(models.Model):
     title = models.CharField(max_length=30, verbose_name=_('title'))
-    price = models.IntegerField(default=100)
+    price = models.IntegerField(default=100, verbose_name=_('price'))
 
     def __str__(self):
         return f'{self.title}'
+
+    class Meta:
+        verbose_name_plural = _('surveys')
+        verbose_name = _('survey')
 
 
 class Question(models.Model):
@@ -16,6 +20,10 @@ class Question(models.Model):
 
     def __str__(self):
         return f'{self.text}'
+
+    class Meta:
+        verbose_name_plural = _('questions')
+        verbose_name = _('question')
 
 
 class AnswerOption(models.Model):
@@ -26,3 +34,7 @@ class AnswerOption(models.Model):
 
     def __str__(self):
         return f'{self.text}'
+
+    class Meta:
+        verbose_name_plural = _('answer options')
+        verbose_name = _('answer option')

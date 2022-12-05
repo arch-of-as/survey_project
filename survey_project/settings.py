@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app_users.apps.AppUsersConfig',
     'app_survey.apps.AppSurveyConfig',
+    'colorfield',
 ]
 
 MIDDLEWARE = [
@@ -126,6 +127,7 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'),]
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_REDIRECT_URL = '/'
 

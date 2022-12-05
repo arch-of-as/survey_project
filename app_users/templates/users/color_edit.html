@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "Style edit" %}</title>
+</head>
+<body>
+    <h2>{% trans "Style edit" %}</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% trans "Save" %}</button>
+    </form>
+</body>
+{% endblock %}
+</html>
